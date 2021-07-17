@@ -1,6 +1,8 @@
-# Payroll analytics service Переписал верстку под React
+# Сервис аналитики зарплат (итоговый проект стажерской компании IBS)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Для запуска необходимо установить локальный сервер (например: Mockoon) и загрузить тестовые данные из файла (public/atizay-db.json)
 
 ## Available Scripts
 
