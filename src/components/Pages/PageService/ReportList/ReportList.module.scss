@@ -1,0 +1,23 @@
+@import "src/index";
+
+.reportList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+.graph {
+
+  &Label {
+    margin-bottom: 30px;
+  }
+}
+
+.reportItem {
+  display: flex;
+  margin-bottom: 50px;
+}
+

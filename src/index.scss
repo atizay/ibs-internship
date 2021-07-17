@@ -1,0 +1,236 @@
+@font-face {
+  font-family: 'Fira Sans';           /* название одно */
+  src: url('./assets/fonts/FiraSans/FiraSans-Light.ttf');     /* разные файлы */
+  font-weight: 300;                  /* разная плотность */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';           /* название одно */
+  src: url('./assets/fonts/FiraSans/FiraSans-Regular.ttf');     /* разные файлы */
+  font-weight: 400;                  /* разная плотность */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';           /* название одно */
+  src: url('./assets/fonts/FiraSans/FiraSans-Medium.ttf');     /* разные файлы */
+  font-weight: 500;                  /* разная плотность */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+// === MIXIN ===
+@mixin fira-sans {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+@mixin list-null {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+// === / MIXIN ===
+
+// === FUNCTIONS ===
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($num) {
+  @return (strip-unit($num) / 16) * 1rem;
+}
+// === / FUNCTIONS ===
+
+
+// === VARIABLES ===
+$base: rem(4px);
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-s: rem(16px);
+$fs-m: rem(24px);
+$fs-l: rem(30px);
+$fs-xl: rem(36px);
+
+$transition: all .2s ease-in;
+
+$color-base: #1C1C24;
+$color-white: #fafafa;
+
+$color-primary-light: #4791db;
+$color-primary-main: #1976d2;
+$color-primary-dark: #115293;
+
+$color-secondary: #4791db;
+// === / VARIABLES ===
+
+// === COMMON ===
+html {
+  // @media (max-width: $breakpoint-md-max) {
+  //   font-size: 14px;
+  // }
+
+  // @media (max-width: $breakpoint-sm-max) {
+  //   font-size: 10px;
+  // }
+}
+
+body {
+  @include fira-sans;
+
+  // background-color: $color-primary-main;
+  position: relative;
+  color: $color-base;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 0;
+  background-color: #E3F1FF;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include fira-sans;
+
+  padding: 0;
+  margin: 0;
+  color: $color-primary-dark;
+}
+
+h1 {
+  font-size: $fs-xl;
+}
+
+h2 {
+  font-size: $fs-l;
+  font-weight: $fw-regular;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-weight: $fw-light;
+  font-size: $fs-s;
+  line-height: $fs-s*1.25;
+  // margin-top: 0;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.btn {
+  @include fira-sans;
+
+  height: max-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: $base*2 $base*4;
+  font-weight: $fw-regular;
+  font-size: $fs-s;
+  background: none;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: $transition;
+  cursor: pointer;
+  max-width: fit-content;
+  border-radius: 3px;
+
+  &_primary {
+    color: $color-white;
+    background-color: $color-primary-main;
+    border: 2px solid $color-primary-main;
+
+    &:hover {
+      background-color: darken($color-primary-main, 5%);
+    }
+
+    &-inverted {
+      color: $color-primary-main;
+      background-color: $color-white;
+      border: 2px solid $color-primary-main;
+
+      &:hover {
+        color: $color-white;
+        background-color: lighten($color-primary-main, 5%);
+        border: 2px solid $color-primary-main;
+      }
+    }
+
+  }
+
+
+
+
+
+  // &_primary-dark {
+  //   color: $color-white;
+  //   background-color: $dark-grey;
+
+  //   &:hover {
+  //     background-color: darken($dark-grey, 5%);
+  //   }
+  // }
+
+  // &_danger {
+  //   color: grey;
+  //   background-color: grey;
+
+  //   &:hover {
+  //     background-color: darken(grey, 5%);
+  //   }
+  // }
+
+  // &_secondary {
+  //   color: grey;
+  //   background-color: grey;
+
+  //   &:hover {
+  //     background-color: darken(grey, 5%);
+  //   }
+  // }
+
+}
+
+// === /COMMON ===
+
+
+.recharts-wrapper{
+
+}
+
+.recharts-default-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40px!important;
+}
+

@@ -1,0 +1,73 @@
+@import "src/index";
+
+.searchForm {
+  padding-bottom: 30px;
+  border-bottom: 2px solid $color-primary-main;
+  margin-bottom: 50px;
+  max-width: 900px;
+
+  &__title {
+    margin-bottom: $base*5;
+    font-weight: $fw-regular;
+    color: $color-primary-dark;
+  }
+
+  &__fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      font-weight: $fw-regular;
+      color: $color-primary-dark;
+    }
+
+    input {
+      width: 400px;
+    }
+
+    select {
+      width: 300px;
+    }
+  }
+}
+
+.reportList {
+  @include list-null;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+  &__item {
+    width: 100%;
+    max-width: 900px;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+      margin-right: 100px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__graph {
+
+  }
+}
